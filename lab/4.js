@@ -38,3 +38,18 @@ function showText() {
     elementToShow.style.display = 'inline';
     elementToHide.style.display = 'none';
 }
+
+// 5
+function colorize() {
+
+    const row = document.querySelectorAll('table tr');
+
+    let index = 0
+    for (let el of row) {
+
+        index++;
+        if (index % 2 === 0) {
+            el.style.background = 'teal';
+        }
+    }
+}
