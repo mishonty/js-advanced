@@ -17,3 +17,14 @@ function extractText() {
         textArea.value += el.textContent + '\n';
     }
 }
+
+// 3
+function calc() {
+
+    const firstElement = document.getElementById('num1').value;
+    const secondElement = document.getElementById('num2').value;
+
+    let sumElement = Number(firstElement) + Number(secondElement);
+
+    document.getElementById('sum').value = sumElement;
+}
