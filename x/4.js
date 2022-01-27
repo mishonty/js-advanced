@@ -34,7 +34,7 @@ function solve() {
     }
   }
     
-    // 4
+    // 3
     function toggle() {
     
     const hiddenText = document.getElementById("extra");
@@ -76,4 +76,31 @@ function solve() {
 
   result = result.trim();
   resultContainer.textContent = result;
+}
+
+// 4
+function search() {
+
+   const towns = document.querySelectorAll('ul#towns>li');
+   const search = document.getElementById('searchText').value;
+   const resultElement = document.getElementById('result');
+
+   let result = 0;
+
+   for (let town of towns) {
+
+      let match = town.textContent.toLowerCase();
+      if (match.includes(search.toLowerCase())) {
+         town.style.textDecoration = 'underline';
+         town.style.fontWeight = 'bold';
+         result++;
+      }
+
+      if (!match.includes(search.toLowerCase())) {
+         town.style.textDecoration = 'none';
+         town.style.fontWeight = 'normal';
+      }
+   }
+
+   resultElement.innerHTML = `${result} matches found`;
 }
