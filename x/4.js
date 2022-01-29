@@ -104,3 +104,25 @@ function search() {
 
    resultElement.innerHTML = `${result} matches found`;
 }
+
+// 5
+function solve() {
+   document.querySelector('#searchBtn').addEventListener('click', onClick);
+
+   function onClick() {
+
+      const dataElement = document.querySelectorAll('tbody tr');
+      const searchQuery = document.getElementById('searchField').value.toLowerCase();
+      const dataArray = Array.from(dataElement);
+
+      for (let el of dataArray) {
+         const text = el.textContent.toLowerCase();
+
+         if (text.includes(searchQuery)) {
+            el.classList.add('select');
+         } else {
+            el.classList.remove('select');
+         }
+      }
+   }
+}
