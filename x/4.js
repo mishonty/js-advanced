@@ -126,3 +126,28 @@ function solve() {
       }
    }
 }
+
+// 6
+function solve() {
+
+  const textInput = document.getElementById('input').value;
+  const divOutput = document.getElementById('output');
+  const sentences = textInput.split('.').filter(el => el.length > 0);
+  let count = 0;
+  let output = ``;
+
+  for (let sentence of sentences) {
+    output += `${sentence}.`;
+    count++;
+
+    if (count >= 3) {
+      divOutput.innerHTML += `<p>${output}</p>`;
+      output = ``;
+      count = 0;
+    }
+  }
+
+  if (output !== ``) {
+    divOutput.innerHTML += `<p>${output}</p>`;
+  }
+}
